@@ -1,0 +1,9 @@
+.desktop-header-grid li a:hover {
+    transition: all .125s;
+    border-color: $color--menu-hover;
+}
+
+a:hover{
+    color: #ED9C35;
+    cursor: pointer;
+}

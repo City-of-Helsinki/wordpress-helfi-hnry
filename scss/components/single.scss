@@ -1,0 +1,119 @@
+.main-single{
+
+    .blue-lift {
+        width: 95%;
+        padding: 0;
+        margin: 4rem auto;
+        background-color: #173C75;
+        color: white;
+        padding: 4rem;
+        border-left: 17px solid #0092BE;
+    }
+    .wp-block-quote{
+        width: 95%;
+        margin: 4rem auto;
+        padding: 4rem;
+        background-color: #66C0BE;
+        p{
+            font-size: 1.4375rem;
+            line-height: 2.25rem;
+            font-style: italic;
+        }
+        cite{
+            font-style: normal;
+            font-size: 1.125rem;
+            line-height: 2.25rem;
+        }
+    }
+    p,
+    li {
+        font-size: 1.125rem;
+        line-height: 2.25rem;
+    }
+    @media screen and (max-width:$mobile--small) {
+        h1{
+            font-size: 1.5rem;
+        }
+    }
+    @media screen and (max-width:$mobile) {
+        .blue-lift {
+            padding: 40px;
+        }
+        .blue-lift ul{
+            padding: 0;
+            margin: 0;
+        }
+    }
+    @media screen and (min-width:$mobile) {
+        .wp-block-quote,
+        .blue-lift {
+          max-width: 95%;
+        }
+        .wp-block-quote{
+
+            p{
+                padding-right: 120px;
+
+            }
+            cite{
+
+            }
+        }
+        h1{
+            font-size: 3.125rem;
+            line-height: 3.8125rem;
+            max-width: 845px;
+        }
+        h2,
+        .paragraph-large{
+            font-size: 1.5625rem;
+            line-height: 2.625rem;
+        }
+        p,
+        li {
+            font-size: 1.125rem;
+            line-height: 2.25rem;
+        }
+        h3{
+            font-size: 1.4375rem;
+            line-height: 2.25rem;
+        }
+     }
+
+        @media screen and (min-width:$tablet) {
+            .blue-lift {
+
+                background-color: #173C75;
+                color: white;
+                padding: 70px 100px;
+                border: 2px solid #0092BE;
+                border-left: 17px solid #0092BE;
+                margin: 4rem auto;
+
+        }
+        .wp-block-quote{
+            padding: 70px 100px;
+            margin: 4rem auto;
+
+
+        }
+     }
+
+      @media screen and (min-width:$desktop) {
+        .wp-block-quote,
+        .blue-lift {
+            width: 1100px;
+            max-width: 95%;
+          }
+     }
+     @media screen and (min-width:1600px) {
+
+     }
+
+}
+
+.wp-block-embed.is-type-video iframe{
+    width: 100%;
+    max-width: 100%;
+}
+
