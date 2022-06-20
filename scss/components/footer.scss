@@ -34,6 +34,10 @@
             }
         }
     }
+
+    a {
+        color: #0072b2;
+    }
 }
 .site-footer__grid__left__logos{
     display: grid;
@@ -60,6 +64,17 @@
     max-width: 200px;
     margin-top: 20px;
     margin-bottom: 40px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    border:none;
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+        font-weight: 700;
+        cursor: pointer;
+    }
 }
 
 @media screen and (min-width: $mobile){

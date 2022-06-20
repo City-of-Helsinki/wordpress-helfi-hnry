@@ -10,12 +10,12 @@
 
 <header class="desktop-header">
     <div class="desktop-header-grid">
-      <a href="<?php bloginfo('url'); ?>" class="desktop-header__logo-wrap">
+      <a aria-label="<?php echo hnry_get_page_title();?>" href="<?php bloginfo('url'); ?>" class="desktop-header__logo-wrap">
         <?php $language = pll_current_language();
           if( $language == 'fi'){ ?>
-          <img src="<?php bloginfo('template_directory'); ?>/images/hnry_logo.png" class="header--logo">
+          <img src="<?php bloginfo('template_directory'); ?>/images/hnry_logo.png" alt="<?php echo hnry_get_page_title(); ?>" class="header--logo">
           <?php } else { ?>
-          <img src="<?php bloginfo('template_directory'); ?>/images/hnry_logo_en.png" class="header--logo">
+          <img src="<?php bloginfo('template_directory'); ?>/images/hnry_logo_en.png" alt="<?php echo hnry_get_page_title(); ?>" class="header--logo">
         <?php } ?>
       </a>
       <?php
@@ -35,11 +35,7 @@
             // Loop through rows.
             while( have_rows('logos', 'option') ) : the_row();
 
-                // Load sub field value.
-                $logo = get_sub_field('logo');
-                $link = get_sub_field('link');
-                // Do something...
-                echo '<a href="' . esc_url($link) . '"><img class="site-footer__grid__left__logo" src=' . esc_url($logo) . '></a>' ;
+               get_template_part('template-parts/logos');
             // End loop.
             endwhile;
 
@@ -53,12 +49,7 @@
             // Loop through rows.
             while( have_rows('logos_en', 'option') ) : the_row();
 
-                // Load sub field value.
-                $logo = get_sub_field('logo');
-                $link = get_sub_field('link');
-                // Do something...
-                echo '<a href="' . esc_url($link) . '"><img class="site-footer__grid__left__logo" src=' . esc_url($logo) . '></a>' ;
-            // End loop.
+              get_template_part('template-parts/logos');
             endwhile;
 
             // No value.
@@ -69,6 +60,7 @@
 
 
       </div> <!-- desktop-header-grid__logos END -->
+      <div class="desktop-header-grid__language-switcher">
       <?php
         wp_nav_menu(
           array(
@@ -76,5 +68,6 @@
             'menu_class' => 'language',
           )
       ); ?>
+      </div>
     </div>
 </header>

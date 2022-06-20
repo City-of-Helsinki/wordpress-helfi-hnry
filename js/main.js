@@ -1,8 +1,8 @@
 jQuery('a#toggle').click(function() {
-  jQuery('div.menu-main-container ul').slideToggle(200, function() {
+  jQuery('div.mobile-top-menu ul').slideToggle(200, function() {
     // Animation complete.
   });
-  jQuery('div.menu-main-en-container ul').slideToggle(200, function() {
+  jQuery('div.menu-ilman-polylangia-container ul').slideToggle(200, function() {
     // Animation complete.
   });
   jQuery('.toggler--open').toggle();
@@ -21,7 +21,10 @@ jQuery(document).ready(function(){
 
   btn.on('click', function(e) {
     e.preventDefault();
+    
     jQuery('html, body').animate({scrollTop:0}, '300');
+    // Focus on the first element to "reset" focus
+    jQuery('#jump-to-content').focus();
   });
 });
 

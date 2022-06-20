@@ -1,12 +1,12 @@
 <div class="page-container">
-    <a id="back-to-top" class="back-to-top">
+    <button id="back-to-top" class="back-to-top">
         <img src="<?php bloginfo('template_directory'); ?>/images/arrow-up.png" class="back-to-top__arrow">
                 <?php if ( function_exists ( 'pll_e' ) ){
                     pll_e( 'Takaisin ylös' );
                 }else{
                     echo 'Takaisin ylös';
                 } ?>
-    </a>
+    </button>
 </div>
 <footer class="site-footer">
 
@@ -38,11 +38,7 @@
             // Loop through rows.
             while( have_rows('logos', 'option') ) : the_row();
 
-                // Load sub field value.
-                $logo = get_sub_field('logo');
-                $link = get_sub_field('link');
-                // Do something...
-                echo '<a href="' . esc_url($link) . '"><img class="site-footer__grid__left__logo" src=' . esc_url($logo) . '></a>' ;
+                get_template_part('template-parts/logos');
             // End loop.
             endwhile;
 
@@ -56,11 +52,7 @@
             // Loop through rows.
             while( have_rows('logos_en', 'option') ) : the_row();
 
-                // Load sub field value.
-                $logo = get_sub_field('logo');
-                $link = get_sub_field('link');
-                // Do something...
-                echo '<a href="' . esc_url($link) . '"><img class="site-footer__grid__left__logo" src=' . esc_url($logo) . '></a>' ;
+                get_template_part('template-parts/logos');
             // End loop.
             endwhile;
 
@@ -83,7 +75,11 @@
                     <a>
                 <?php } ?>
             </div>
-            <a href="<?php bloginfo('url'); ?>">
+            <?php 
+            $squares_aria = function_exists('pll__') ? pll__('Palaa takaisin etusivulle') : 'Palaa takaisin etusivulle';
+            ?>
+
+            <a href="<?php bloginfo('url'); ?>" aria-label="<?php echo $squares_aria; ?>">
                 <?php get_template_part('template-parts/squares'); ?>
             </a>
         </div>

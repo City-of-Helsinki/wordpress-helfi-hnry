@@ -3,7 +3,7 @@
 ?>
 
 
-<main class="main-front-page">
+<main id="main" class="main-front-page">
     <h1>
     <?php
     $language = pll_current_language();

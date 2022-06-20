@@ -61,7 +61,7 @@ main .wp-block-cover, .wp-block-cover-image {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     align-items: center;
-    a {
+    a, span {
         max-width: 100px;
         img {
             max-width: 100%;
@@ -73,7 +73,7 @@ main .wp-block-cover, .wp-block-cover-image {
 
 }
 .mobile-header__toggle {
-    grid-column: 2/3;
+    grid-column: 3 / span 1;
     grid-row: 2;
 }
 .mobile-header--logo {
@@ -108,6 +108,17 @@ main .wp-block-cover, .wp-block-cover-image {
         align-items: center;
         background-color: white;
 
+        span {
+            text-decoration: none;
+            color: $color--menu-links;
+            
+            display: inline-block;
+            font-size: 1.1em;
+            text-align: left;
+            margin-left: 0 8px;
+            font-weight: 700;
+        }
+
         a {
             transition: all .125s;
             text-decoration: none;
@@ -134,7 +145,7 @@ main .wp-block-cover, .wp-block-cover-image {
         .desktop-header-grid__logos{
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            a {
+            a, span {
                 margin: 0;
                 max-width: 110px;
                 img{
@@ -143,6 +154,16 @@ main .wp-block-cover, .wp-block-cover-image {
             }
         }
 
+
+        .top-menu, .menu-ilman-polylangia-container {
+            grid-row: 2;
+        }
+
+        .desktop-header-grid__language-switcher {
+            grid-row: 2;
+            justify-content: flex-end;
+            grid-column-start: 3;
+        }
     }
 
 
@@ -167,16 +188,19 @@ main .wp-block-cover, .wp-block-cover-image {
         display: none;
         position: absolute;
     }
-    .menu-item-has-children:hover ul{
+
+    .menu-item-has-children:hover ul,
+    .menu-item-has-children:focus-within ul{
         display: block;
     }
 }
 @media screen and (min-width:$desktop) {
     .desktop-header-grid {
         display: grid;
-        grid-template-columns: auto auto 1fr 450px 250px;
+
         align-items: center;
         background-color: white;
+        padding: 0 16px;
 
         a {
             transition: all .125s;
@@ -204,7 +228,7 @@ main .wp-block-cover, .wp-block-cover-image {
         .desktop-header-grid__logos{
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            a {
+            a, span {
                 margin: 0;
                 max-width: 110px;
                 img{
@@ -219,6 +243,34 @@ main .wp-block-cover, .wp-block-cover-image {
         a {
 
         }
+    }
+
+    .desktop-header-grid__language-switcher .sub-menu {
+        background-color: white;
+        z-index: 500;
+        padding-right: 50px;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .desktop-header-grid {
+        grid-template-columns: auto auto 1fr 450px 250px;
+
+
+        .top-menu, .menu-ilman-polylangia-container {
+            grid-row: auto;
+        }
+
+        .desktop-header-grid__language-switcher {
+            grid-row: auto;
+            justify-content: center;
+            grid-column-start: auto;
+        }
+    }
+
+    
+    .desktop-header-grid__language-switcher .sub-menu {
+        padding-right: 0 px;
     }
 }
 
@@ -270,6 +322,76 @@ main .wp-block-cover, .wp-block-cover-image {
         transform: rotate(135deg);
         vertical-align: middle;
         width: 0.45em;
+    }
+}
+
+.desktop-header-grid__language-switcher {
+    display: flex;
+    align-items: center;
+}
+
+.desktop-header-grid {
+    .menu-language-container {
+        ul {
+            grid-template-columns: none;
+            padding-left: 0;
+        }
+
+        a {
+            margin: 0 8px;
+            display: inline-block;
+        }
+    }
+    
+}
+
+a#jump-to-content
+{
+position:absolute;
+left:-10000px;
+top:auto;
+width:1px;
+height:1px;
+overflow:hidden;
+}
+ 
+a#jump-to-content:focus
+{
+position:static;
+width:auto;
+height:auto;
+}
+
+.mobile-header-grid__language-switcher {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    text-align: left;
+
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: center;
+
+    ul {
+        display:inline-block;
+        padding-left: 0;
+        list-style-type: none;
+    }
+
+    li {
+        display:inline-block;
+        margin-left: 8px;
+    }
+
+    .sub-menu {
+        border-left: 3px solid #007bc0;
+    }
+
+    a {
+        font-weight: 700;
+        font-size: 22px;
+        padding: 0 9px;
+        
     }
 }
 
