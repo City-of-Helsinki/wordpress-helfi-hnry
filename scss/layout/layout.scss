@@ -18,6 +18,11 @@ body {
     margin: 0 auto;
  }
 
+ .wp-block-cover h1 {
+  background-color: #173c75;
+  padding: 20px 10px;
+ }
+
  @media screen and (min-width:$mobile) {
    .page-container, .is-style-page-container {
      max-width: 95%;
@@ -32,6 +37,9 @@ body {
     font-size: 3.125rem;
     line-height: 3.8125rem;
     max-width: 845px;
+    background-color: #173c75;
+    padding: 40px 20px;
+    margin-right: 20px;
 }
     h2,
     .paragraph-large{
