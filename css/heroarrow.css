@@ -1,0 +1,7 @@
+.heroarrow{
+    padding: 1rem;
+    width: 5rem;
+    position: relative;
+    top: -4rem;
+    z-index: 1;
+}

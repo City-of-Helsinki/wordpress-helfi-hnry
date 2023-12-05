@@ -42,8 +42,6 @@
             // End loop.
             endwhile;
 
-            // No value.
-            else :
             // Do something...
             endif;?>
           <?php } else { ?>
@@ -75,7 +73,7 @@
                     <a>
                 <?php } ?>
             </div>
-            <?php 
+            <?php
             $squares_aria = function_exists('pll__') ? pll__('Palaa takaisin etusivulle') : 'Palaa takaisin etusivulle';
             ?>
 
