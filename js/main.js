@@ -25,11 +25,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Set focus to a specific element at the top of the page
         // Replace 'element-to-focus' with the ID of the element you want to focus
-        const elementToFocus = document.getElementById('main');
+        const elementToFocus = document.getElementById('jump-to-content');
         console.log('clicked')
         if (elementToFocus) {
           console.log('focused')
             elementToFocus.focus();
+            console.log(elementToFocus);
         }
     });
 });

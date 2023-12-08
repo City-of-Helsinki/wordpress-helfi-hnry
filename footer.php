@@ -1,6 +1,6 @@
 <div class="page-container">
     <button id="back-to-top" class="back-to-top">
-        <img src="<?php bloginfo('template_directory'); ?>/images/arrow-up.png" class="back-to-top__arrow">
+        <img src="<?php bloginfo('template_directory'); ?>/images/arrow-up.png" class="back-to-top__arrow" alt="">
                 <?php if ( function_exists ( 'pll_e' ) ){
                     pll_e( 'Takaisin ylös' );
                 }else{
