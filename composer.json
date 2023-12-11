@@ -1,15 +1,10 @@
 {
   "name": "mysteerio/hnry",
   "type": "wordpress-theme",
-	"version": "master",
   "authors": [
     {
       "name": "Mysteerio",
       "email": "info@mysteerio.fi"
     }
-  ],
-	"require": {
-    "wecodemore/wpstarter": "~2.0",
-    "johnpbloch/wordpress-core": ">5.0"
-  }
+  ]
 }
