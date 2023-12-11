@@ -84,7 +84,7 @@ h4 {
 
 a {
   text-decoration: none;
-  color: #007bc0; }
+  color: #00608C; }
 
 .desktop-header-grid li a:hover {
   transition: all .125s;
@@ -179,7 +179,7 @@ main .wp-block-cover, .wp-block-cover-image {
     background-color: white; }
     .desktop-header-grid span {
       text-decoration: none;
-      color: #0092BE;
+      color: #00608C;
       display: inline-block;
       font-size: 1.1em;
       text-align: left;
@@ -188,7 +188,7 @@ main .wp-block-cover, .wp-block-cover-image {
     .desktop-header-grid a {
       transition: all .125s;
       text-decoration: none;
-      color: #0092BE;
+      color: #00608C;
       width: 100%;
       display: inline-block;
       font-size: 1.5em;
@@ -244,7 +244,7 @@ main .wp-block-cover, .wp-block-cover-image {
     .desktop-header-grid a {
       transition: all .125s;
       text-decoration: none;
-      color: #0092BE;
+      color: #00608C;
       width: 100%;
       display: inline-block;
       font-size: 1.5em;
@@ -659,7 +659,7 @@ a#jump-to-content:focus {
 
 #cookie-notice a {
   text-decoration: none;
-  color: #007bc0; }
+  color: #00608C; }
 
 #cookie-notice .cn-button {
   color: white; }

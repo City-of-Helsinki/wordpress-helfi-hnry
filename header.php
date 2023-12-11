@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo function_exists('pll_current_language') ? pll_current_language('locale') : 'fi'; ?>">
 <head>
-  <meta charset=utf-8>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   <title>
@@ -10,7 +9,7 @@
       // Messy fix, but front page wasnt working at all.
       echo hnry_get_page_title();
     } else {
-      wp_title(''); 
+      wp_title('');
     }
     ?>
   </title>

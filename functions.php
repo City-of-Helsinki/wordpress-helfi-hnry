@@ -21,7 +21,7 @@ if( function_exists('acf_add_options_page') ) {
  * Replicate the shortcode function from an plugin, as the plugin doesn't include any
  * hooks or actions.
  *
- * 
+ *
  */
 function hnry_am_post_grid_shortcode_mapper( $atts, $content = null ) {
 
@@ -68,7 +68,7 @@ function hnry_am_post_grid_shortcode_mapper( $atts, $content = null ) {
 
 	// Get category terms
 	$terms = get_terms($args); ?>
-	<div class="am_ajax_post_grid_wrap" data-pagination_type="<?php echo esc_attr($pagination_type); ?>" data-am_ajax_post_grid='<?php echo json_encode($shortcode_atts);?>'>
+	<div class="am_ajax_post_grid_wrap" style="margin-top: 20px" data-pagination_type="<?php echo esc_attr($pagination_type); ?>" data-am_ajax_post_grid='<?php echo json_encode($shortcode_atts);?>'>
 
 		<?php if ( $show_filter == "yes" && $terms && !is_wp_error( $terms ) ){ ?>
 			<div class="asr-filter-div" data-layout="<?php echo $layout; ?>"><ul>
@@ -99,13 +99,13 @@ function hmry_add_aria_label_to_language_selector_menu( $atts, $item, $args ) {
 
 		$atts['aria-label'] = $choose_language_aria . ' ' .$item->title;
 	}
-	
+
 	return $atts;
 }
 add_filter( 'nav_menu_link_attributes', 'hmry_add_aria_label_to_language_selector_menu', 10, 3 );
 
 /**
- * Polylang didnt show properly, which menu item is selected. 
+ * Polylang didnt show properly, which menu item is selected.
  * Basically add triangle down html icon to the selected language markup
  */
 function hmry_add_dropdown_icon_to_lang_selector( $items, $args ){
@@ -131,7 +131,7 @@ function hmry_add_dropdown_icon_to_lang_selector( $items, $args ){
 	}
 	return $items;
 }
-add_filter( 'wp_nav_menu_objects', 'hmry_add_dropdown_icon_to_lang_selector', 10, 2); 
+add_filter( 'wp_nav_menu_objects', 'hmry_add_dropdown_icon_to_lang_selector', 10, 2);
 
 
 add_filter('acf/register_block_type_args', 'hnry_overwrite_concepts_block_paths');
@@ -142,6 +142,14 @@ function hnry_overwrite_concepts_block_paths( $args ){
 			$args['enqueue_style'] = get_template_directory_uri() . '/css/concepts.css';
 			$args['enqueue_script'] = get_template_directory_uri() . '/js/concepts.js';
 		}
-		
+		if($args['name'] === 'acf/heroarrow') {
+		$args['render_template'] = 'template-parts/heroarrow.php';
+			$args['enqueue_style'] = get_template_directory_uri() . '/css/heroarrow.css';
+		}
+		if($args['name'] === 'acf/imgpara') {
+			$args['render_template'] = 'template-parts/imgpara.php';
+				$args['enqueue_style'] = get_template_directory_uri() . '/css/imgpara.css';
+			}
+
     return $args;
 }

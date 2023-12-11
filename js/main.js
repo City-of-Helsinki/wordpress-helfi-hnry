@@ -16,15 +16,42 @@ jQuery('a#toggle').click(function() {
 // jQuery(document).ready(function(){
 //   jQuery('a#toggle').click();
 // });
-jQuery(document).ready(function(){
-  let btn = jQuery('#back-to-top');
+document.addEventListener('DOMContentLoaded', function() {
+    const backToTopButton = document.getElementById('back-to-top');
 
-  btn.on('click', function(e) {
-    e.preventDefault();
-    
-    jQuery('html, body').animate({scrollTop:0}, '300');
-    // Focus on the first element to "reset" focus
-    jQuery('#jump-to-content').focus();
+    backToTopButton.addEventListener('click', function() {
+        // Scroll to the top of the page
+        window.scrollTo(0, 0);
+
+        // Set focus to a specific element at the top of the page
+        // Replace 'element-to-focus' with the ID of the element you want to focus
+        const elementToFocus = document.getElementById('jump-to-content');
+        console.log('clicked')
+        if (elementToFocus) {
+          console.log('focused')
+            elementToFocus.focus();
+            console.log(elementToFocus);
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Select all anchor tags
+  const links = document.querySelectorAll('a');
+  links.forEach(function(link) {
+    // Check if the link opens in a new tab
+    if (link.target === '_blank') {
+      // Add an aria-label or append text to the link's existing text
+      const newTabMessage = ' (opens in a new tab)';
+      link.setAttribute('aria-label', link.textContent + newTabMessage);
+    }
+
+    // Check if the link is for a PDF file
+    if (link.href.endsWith('.pdf')) {
+      // Add an aria-label or append text to the link's existing text
+      const pdfMessage = ' (PDF file)';
+      link.setAttribute('aria-label', link.textContent + pdfMessage);
+    }
   });
 });
 

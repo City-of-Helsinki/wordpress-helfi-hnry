@@ -18,13 +18,15 @@
           <img src="<?php bloginfo('template_directory'); ?>/images/hnry_logo_en.png" alt="<?php echo hnry_get_page_title(); ?>" class="header--logo">
         <?php } ?>
       </a>
-      <?php
-        wp_nav_menu(
-          array(
-            'theme_location' => 'top-menu',
-            'menu_class' => 'top-menu',
-          )
-      ); ?>
+      <nav aria-label="Main Navigation">
+        <?php
+          wp_nav_menu(
+            array(
+              'theme_location' => 'top-menu',
+              'menu_class' => 'top-menu',
+            )
+        ); ?>
+      </nav>
       <div class="desktop-header-grid__spacer"></div>
       <div class="desktop-header-grid__logos">
 
@@ -52,22 +54,19 @@
               get_template_part('template-parts/logos');
             endwhile;
 
-            // No value.
-            else :
-            // Do something...
             endif;?>
         <?php } ?>
 
 
       </div> <!-- desktop-header-grid__logos END -->
-      <div class="desktop-header-grid__language-switcher">
-      <?php
-        wp_nav_menu(
-          array(
-            'theme_location' => 'language',
-            'menu_class' => 'language',
-          )
-      ); ?>
-      </div>
+      <nav aria-label="Language Switcher" class="desktop-header-grid__language-switcher">
+        <?php
+          wp_nav_menu(
+            array(
+              'theme_location' => 'language',
+              'menu_class' => 'language',
+            )
+        ); ?>
+      </nav>
     </div>
 </header>
