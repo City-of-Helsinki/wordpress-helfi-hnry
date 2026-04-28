@@ -4,7 +4,7 @@
 ?>
 <style>
    .desktop-header-grid ul {
-      grid-template-columns: repeat(<?php echo $my_menu->count; ?>, auto);
+      grid-template-columns: repeat(<?php echo $my_menu ? $my_menu->count : 3; ?>, auto);
     }
 </style>
 

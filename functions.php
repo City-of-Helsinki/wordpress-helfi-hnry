@@ -133,23 +133,34 @@ function hmry_add_dropdown_icon_to_lang_selector( $items, $args ){
 }
 add_filter( 'wp_nav_menu_objects', 'hmry_add_dropdown_icon_to_lang_selector', 10, 2);
 
+add_action( 'enqueue_block_assets', 'hnry_block_assets', 1 );
+function hnry_block_assets(): void {
+	$blocks = array(
+		'concepts',
+		'heroarrow',
+		'imgpara',
+	);
+
+	$base_url = get_template_directory_uri();
+
+	foreach ( $blocks as $block ) {
+		wp_enqueue_style(
+			'theme-block-' . $block,
+			sprintf( '%s/css/%s.css', $base_url, $block ),
+			array( 'hnry' )
+		);
+	}
+}
 
 add_filter('acf/register_block_type_args', 'hnry_overwrite_concepts_block_paths');
 function hnry_overwrite_concepts_block_paths( $args ){
-
-		if($args['name'] === 'acf/concepts') {
-    	$args['render_template'] = 'template-parts/concepts.php';
-			$args['enqueue_style'] = get_template_directory_uri() . '/css/concepts.css';
-			$args['enqueue_script'] = get_template_directory_uri() . '/js/concepts.js';
-		}
-		if($args['name'] === 'acf/heroarrow') {
+	if ( $args['name'] === 'acf/concepts' ) {
+		$args['render_template'] = 'template-parts/concepts.php';
+	} else if ( $args['name'] === 'acf/heroarrow' ) {
 		$args['render_template'] = 'template-parts/heroarrow.php';
-			$args['enqueue_style'] = get_template_directory_uri() . '/css/heroarrow.css';
-		}
-		if($args['name'] === 'acf/imgpara') {
-			$args['render_template'] = 'template-parts/imgpara.php';
-				$args['enqueue_style'] = get_template_directory_uri() . '/css/imgpara.css';
-			}
+	} else if ( $args['name'] === 'acf/imgpara' ) {
+		$args['render_template'] = 'template-parts/imgpara.php';
+	}
 
-    return $args;
+	return $args;
 }
